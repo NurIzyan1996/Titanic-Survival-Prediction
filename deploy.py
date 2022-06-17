@@ -1,8 +1,7 @@
 import os
 import pandas as pd
-import pickle
 import numpy as np
-from modules import ModelLoading,ModelEvaluation
+from modules import ModelLoading
 #%% PATHS
 TEST_PATH = os.path.join(os.getcwd(),'datasets','test.csv')
 SEX_LE_PATH = os.path.join(os.getcwd(),'saved_model','sex_le_scaler.pkl')
@@ -51,9 +50,12 @@ X = mms.transform(X)
 
 #%% STEP 5: Model Deployment
 # a) deploy the model
-me = ModelEvaluation()
-outcome = me.deploy_model(model,X)
+outcome = pd.DataFrame(model.predict(X)).astype(int)
+outcome.columns = ['Survived']
 
-# b) save outcome as new csv file
-final = pd.concat([outcome,df],axis=1)
+# b) combine columns PassengerId and Survived
+passengerid= df['PassengerId']
+final = pd.concat([passengerid,outcome],axis=1)
+
+# c) save outcome as new csv file
 final.to_csv(OUTCOME_SAVE_PATH,index=False)

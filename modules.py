@@ -69,7 +69,6 @@ class ModelCreation():
         pipeline_forest = Pipeline(steps_forest)
         pipeline_log = Pipeline(steps_log)
         
-        # fit the training data into the pipelines
         pipelines= [pipeline_nb, pipeline_svm, pipeline_knc,pipeline_tree,
                     pipeline_forest,pipeline_log]
         
@@ -108,12 +107,6 @@ class ModelEvaluation():
         print(classification_report(data, best_pipeline_prediction,
                                     target_names=target_names))
         print(confusion_matrix(data, best_pipeline_prediction))
-        
-    def deploy_model(self,model,data):
-        outcome = pd.DataFrame(model.predict(data))
-        outcome.columns = ['Survived']
-        outcome.replace({'Survived':{0:'Died',1:'Survived'}}, inplace=True)
-        return outcome
         
 class ModelLoading():
     def __init__(self):
