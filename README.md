@@ -13,7 +13,7 @@ app.py contains the codes to build web app (streamlit).
 
 ## Model performance
 1) Kaggle public score
-![Kaggle public score](gained public score of 0.78229.)
+![Kaggle public score](kaggle_score.PNG)
 
 2) Machine learning pipelines model score
 ![Machine learning pipelines model score](trained_model_score.PNG)
