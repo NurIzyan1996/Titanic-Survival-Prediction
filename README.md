@@ -21,4 +21,14 @@ app.py contains the codes to build web app (streamlit).
 3) Best model performance
 # ![Best model performance](trained_model_performance.PNG)
 
+## Run Streamlit
+1. Clone this repository.
+2. Run streamlit via conda prompt by activating the correct environment and working directory and run the code "streamlit run app.py".
+3. Your browser will automatically redirected to streamlit local host and the streamlit app can now be launched.
+4. Insert your information and click "Submit" button to view the result.
 
+## Web App
+Please click [here](https://arcane-ridge-90775.herokuapp.com/) to view the Titanic survival prediction streamlit and insert your information then click "Submit" button to view the result.
+
+## Credits
+Big thanks to [towardsdatascience](https://towardsdatascience.com/deploying-a-basic-streamlit-app-to-heroku-be25a527fcb3) and [Bluecodes](https://www.youtube.com/watch?v=mQ7rGcE766k) for the guidance to deploy streamlit in heroku.
