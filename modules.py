@@ -1,7 +1,6 @@
 
 import pickle
 import seaborn as sns
-import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder,MinMaxScaler
 from sklearn.impute import KNNImputer
@@ -86,7 +85,7 @@ class ModelEvaluation():
         best_scaler = 0
         best_pipeline = ''
         pipe_dict = {0:'NB', 1:'SVM', 2:'KNeighbors Classifier', 
-                     3:'KNeighbors Classifier',4:'Random Forest Classifier',
+                     3:'Decision Tree Classifier',4:'Random Forest Classifier',
                      5: 'Logistic Regression'}
         for i,model in enumerate(pipelines):
             predictions.append(model.predict(data_1))
